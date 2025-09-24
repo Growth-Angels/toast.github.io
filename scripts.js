@@ -10,6 +10,9 @@ class Toast {
       person: ['Mme Ducros', 'Mr Patate', 'Mme Doué', 'Mr Gentil', 'Mr Grognon'],
       city: ['Lyon', 'Marseille', 'Paris', 'Nantes', 'Lille', 'Saint-Marcel-les-valence'],
     }
+
+    this.timeout = null
+    this.interval = null
   }
 
   generateRandomTiming() {
@@ -19,7 +22,7 @@ class Toast {
   displayToast() {
     this.toast.classList.remove('close')
     // auto close
-    setTimeout(() => {
+    this.interval = setTimeout(() => {
       this.closeToast()
     }, 3000)
   }
@@ -31,6 +34,10 @@ class Toast {
       this.refreshState()
       this.displayToast()
     }, this.generateRandomTiming())
+  }
+
+  pauseClosing = () => {
+    clearTimeout(this.interval)
   }
 
   refreshState() {
@@ -54,5 +61,15 @@ class Toast {
 
 document.addEventListener('DOMContentLoaded', () => {
   const toast = document.querySelector('.toast')
-  new Toast(toast).onMount()
+
+  const toastInstance = new Toast(toast)
+  toastInstance.onMount()
+
+  toast.addEventListener('mouseenter', () => {
+    toastInstance.pauseClosing()
+  })
+
+  toast.addEventListener('mouseleave', () => {
+    toastInstance.closeToast()
+  })
 })
