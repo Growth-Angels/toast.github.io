@@ -1,0 +1,25 @@
+{
+  "name": "algar-toast",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Growth-Angels/toast.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/Growth-Angels/toast.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Growth-Angels/toast.github.io.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "sass --watch styles.scss styles.css",
+    "build": "sass styles.scss styles.css"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}

@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Test toast</title>
 </head>
+
 <body>
-  Hello world
+  <div class="toast close">
+    <div class="toast__title">{type_de_demande} de travaux acceptée</div>
+    <div class="toast__desc">{type_de_travaux} de {person} à {city}</div>
+    <div class="toast__btn">Découvrir</div>
+    <span class="toast__close">x</span>
+  </div>
 </body>
+<script src="scripts.js"></script>
 </html>
