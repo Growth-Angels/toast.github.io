@@ -1,7 +1,7 @@
 class Toast {
   constructor(toast) {
     this.toast = toast
-    this.template = toast.innerHTML
+    this.originalTemplate = toast.innerHTML
     this.timings = [5000, 10000]
     this.randomTiming = this.timings[Math.floor(Math.random() * this.timings.length)]
     this.variables = {
@@ -34,12 +34,13 @@ class Toast {
   }
 
   refreshState() {
+    let newHtml = this.originalTemplate
     for (const [key, value] of Object.entries(this.variables)) {
       const regex = new RegExp(`{${key}}`, 'g')
       const index = Math.floor(Math.random() * value.length)
-      this.template = this.template.replace(regex, value[index])
+      newHtml = newHtml.replace(regex, value[index])
     }
-    this.toast.innerHTML = this.template
+    this.toast.innerHTML = newHtml
   }
 
 
