@@ -5,7 +5,7 @@ class Toast {
     this.timings = [3000, 6000]
     this.randomTiming = this.timings[Math.floor(Math.random() * this.timings.length)]
     this.variables = {
-      type_de_demande: ['Déclaration préalable de travaux', 'Permis de construire'],
+      type_de_demande: ['Déclaration préalable de travaux acceptée', 'Permis de construire accepté'],
       type_de_travaux: ['Garage', 'Maison', "Buanderie", 'Extension', 'Jardin', 'Cloture'],
       person: ['Mme Ducros', 'Mr Patate', 'Mme Doué', 'Mr Gentil', 'Mr Grognon'],
       city: ['Lyon', 'Marseille', 'Paris', 'Nantes', 'Lille', 'Saint-Marcel-les-valence'],
