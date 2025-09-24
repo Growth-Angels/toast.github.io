@@ -2,7 +2,7 @@ class Toast {
   constructor(toast) {
     this.toast = toast
     this.originalTemplate = toast.innerHTML
-    this.timings = [5000, 10000]
+    this.timings = [3000, 6000]
     this.randomTiming = this.timings[Math.floor(Math.random() * this.timings.length)]
     this.variables = {
       type_de_demande: ['Déclaration préalable de travaux', 'Permis de construire'],
@@ -13,7 +13,7 @@ class Toast {
   }
 
   generateRandomTiming() {
-    return Math.floor(Math.random() * (this.timings[1] - this.timings[0] + 1)) + this.timings[0]
+    return Math.floor(Math.random() * (this.timings[1] - this.timings[0] + 100)) + this.timings[0]
   }
 
   displayToast() {
