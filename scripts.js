@@ -2,6 +2,7 @@ class Toast {
   constructor(toast) {
     this.toast = toast
     this.originalTemplate = toast.innerHTML
+    this.displayingTime = 10000
     this.timings = [3000, 6000]
     this.randomTiming = this.timings[Math.floor(Math.random() * this.timings.length)]
     this.variables = {
@@ -24,7 +25,7 @@ class Toast {
     // auto close
     this.interval = setTimeout(() => {
       this.closeToast()
-    }, 3000)
+    }, this.displayingTime)
   }
 
   closeToast() {
